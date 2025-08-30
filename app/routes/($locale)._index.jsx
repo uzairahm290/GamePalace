@@ -2,6 +2,7 @@ import {Await, useLoaderData, Link} from 'react-router';
 import {Suspense} from 'react';
 import {Image} from '@shopify/hydrogen';
 import {ProductItem} from '~/components/ProductItem';
+import {HeroSection} from '~/components/HeroSection';
 
 /**
  * @type {MetaFunction}
@@ -64,6 +65,12 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
+      <HeroSection 
+        title="Welcome to GamePalace"
+        subtitle="Your ultimate destination for premium gaming gear and accessories. Level up your gaming experience with the latest controllers, headsets, and gaming peripherals."
+        ctaText="Explore Products"
+        ctaLink="/collections/all"
+      />
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
